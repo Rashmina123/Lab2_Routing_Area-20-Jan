@@ -1,0 +1,11 @@
+﻿@using System.Text.Json;
+
+<h2> Admin Dashboard</h2>
+@{
+ string userName = Context.Session.GetString("User");
+    LoginViewModel user = JsonSerializer.Deserialize<LoginViewModel>(userName);
+}
+
+<h3> Welcome Login User @user.UserName </h3>
+@*<partial name="~/Views/AccountController/Profile.cshtml" />*@
+<partial name="Profile" />
